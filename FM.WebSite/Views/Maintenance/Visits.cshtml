@@ -1,3 +1,36 @@
-﻿<div class="text-center">
-    <h1 class="display-4">Schedule Maintenance Visits</h1>
+﻿<style>
+    .card {
+        transition: transform 0.3s ease-in-out;
+    }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+</style>
+<div class="container mt-5">
+    <div class="row">
+        <!-- Schedule Maintenance Card -->
+        <div class="col-md-6 mb-4">
+            <div class="card shadow-lg" style="min-height: 250px;">
+                <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                    <i class="fas fa-calendar-alt fa-3x mb-3 text-primary"></i>
+                    <h4 class="card-title">Schedule Maintenance</h4>
+                    <p class="card-text text-center">Plan and schedule your maintenance tasks efficiently.</p>
+                    <a href="@Url.Action("ScheduleVisit", "Maintenance")" class="btn btn-primary mt-auto">Schedule Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- View Maintenance Visit Card -->
+        <div class="col-md-6 mb-4">
+            <div class="card shadow-lg" style="min-height: 250px;">
+                <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                    <i class="fas fa-search fa-3x mb-3 text-primary"></i>
+                    <h4 class="card-title">View Maintenance Visit</h4>
+                    <p class="card-text text-center">Review upcoming maintenance visits and check-in.</p>
+                    <a href="@Url.Action("ViewVisits", "Maintenance")" class="btn btn-primary mt-auto">View Visits</a>
+                </div> 
+            </div>
+        </div>
+    </div>
 </div>

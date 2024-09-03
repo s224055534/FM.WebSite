@@ -25,6 +25,14 @@ namespace FM.WebSite.Controllers
         {
             return View();
         }
+        public IActionResult ScheduleVisit()
+        {
+            return View();
+        }
+        public IActionResult ViewVisits() 
+        {
+            return View();
+        }
         public IActionResult Logout() 
         {
             return View();
