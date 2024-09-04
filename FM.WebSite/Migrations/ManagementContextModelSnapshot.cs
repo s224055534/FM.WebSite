@@ -102,7 +102,7 @@ namespace FM.WebSite.Migrations
 
                     b.HasKey("userId");
 
-                    b.ToTable("Users");
+                    b.ToTable("User");
                 });
 
             modelBuilder.Entity("FM.WebSite.Models.Employee", b =>

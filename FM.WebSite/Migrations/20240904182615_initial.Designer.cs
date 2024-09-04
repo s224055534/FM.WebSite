@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FM.WebSite.Migrations
 {
     [DbContext(typeof(ManagementContext))]
-    [Migration("20240826203513_initial-migration")]
-    partial class initialmigration
+    [Migration("20240904182615_initial")]
+    partial class initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,14 +28,12 @@ namespace FM.WebSite.Migrations
             modelBuilder.Entity("FM.WebSite.Models.Employee", b =>
                 {
                     b.Property<int>("EmployeeId")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EmployeeId"));
 
                     b.Property<string>("EmployeeType")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
 
                     b.HasKey("EmployeeId");
 
@@ -68,9 +66,13 @@ namespace FM.WebSite.Migrations
                         .HasMaxLength(75)
                         .HasColumnType("nvarchar(75)");
 
-                    b.Property<string>("IsActive")
+                    b.Property<string>("Gender")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -93,7 +95,8 @@ namespace FM.WebSite.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("UserType")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
 
                     b.Property<string>("ZipCode")
                         .IsRequired()
@@ -102,7 +105,23 @@ namespace FM.WebSite.Migrations
 
                     b.HasKey("userId");
 
-                    b.ToTable("Users");
+                    b.ToTable("User");
+                });
+
+            modelBuilder.Entity("FM.WebSite.Models.Employee", b =>
+                {
+                    b.HasOne("FM.WebSite.Models.User", "User")
+                        .WithOne("Employees")
+                        .HasForeignKey("FM.WebSite.Models.Employee", "EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("FM.WebSite.Models.User", b =>
+                {
+                    b.Navigation("Employees");
                 });
 #pragma warning restore 612, 618
         }

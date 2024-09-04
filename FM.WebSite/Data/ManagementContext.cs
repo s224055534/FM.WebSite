@@ -9,6 +9,6 @@ namespace FM.WebSite.Data
         {          
         }
         DbSet<Employee> Employees { get; set; }
-        DbSet<User> Users { get; set; }
+        DbSet<User> User { get; set; }
     }
 }
