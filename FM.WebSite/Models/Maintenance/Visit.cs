@@ -15,5 +15,10 @@ namespace FM.WebSite.Models.Maintenance
         public int EmployeeId {  get; set; }
         [Required, ForeignKey("Customer")]
         public int CustomerId { get; set; }
+        [Required, ForeignKey("Fridge")]
+        public int FrideId {  get; set; }
+        public Employee Employee { get; set; }
+        public ICollection<Fridge> Fridge { get; set; }
+
     }
 }

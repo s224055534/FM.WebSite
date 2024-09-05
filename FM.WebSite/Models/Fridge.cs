@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using FM.WebSite.Models.Maintenance;
+using System.ComponentModel.DataAnnotations;
 
 namespace FM.WebSite.Models
 {
@@ -16,5 +17,7 @@ namespace FM.WebSite.Models
         public bool Available { get; set; }
         [Required, StringLength(20)]
         public string Status { get; set; }
+        public ICollection<Fault> Faults { get; set; }
+        public ICollection<Record> Records { get; set; }
     }
 }
