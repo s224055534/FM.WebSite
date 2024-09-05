@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using FM.WebSite.Models.Maintenance;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FM.WebSite.Models
@@ -7,7 +8,9 @@ namespace FM.WebSite.Models
     {
         [Key, ForeignKey("User")]
         public int CustomerId { get; set; }
-        [Required, StringLength(50)]
+        [Required, StringLength(50), Display(Name ="Business Name")]
         public string BusinessName { get; set; }
+        public ICollection<Visit> Visits { get; set; }
+        public FridgeAllocation Allocation { get; set; }
     }
 }

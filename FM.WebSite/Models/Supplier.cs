@@ -14,7 +14,7 @@ namespace FM.WebSite.Models
         public string Address {  get; set; }
         [Required, StringLength(13), Display(Name ="Contact Number"),Phone]
         public string ContactNo { get; set; }
-        [Required, StringLength(20), EmailAddress]
+        [Required, StringLength(50), EmailAddress]
         public string Email { get; set; }
         [Required]
         public bool IsActive {  get; set; }

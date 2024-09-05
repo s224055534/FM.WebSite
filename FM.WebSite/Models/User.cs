@@ -39,6 +39,7 @@ namespace FM.WebSite.Models
         [Required]
         public bool IsActive { get; set; }
         public Employee Employees { get; set; }
+        public Customer Customer {  get; set; }
         
 
     }

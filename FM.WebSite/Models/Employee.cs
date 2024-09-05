@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using FM.WebSite.Models.Maintenance;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 namespace FM.WebSite.Models
 {
@@ -7,8 +8,9 @@ namespace FM.WebSite.Models
         [Key, ForeignKey("User")]
         public int EmployeeId { get; set; }
         [Required, StringLength(10)]
-        public string EmployeeType {  get; set; }
+        public string Role {  get; set; }
         public User User { get; set; }
+        public Visit Visit { get; set; }
         
     }
 }

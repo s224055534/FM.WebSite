@@ -19,5 +19,9 @@ namespace FM.WebSite.Models
         public string Status { get; set; }
         public ICollection<Fault> Faults { get; set; }
         public ICollection<Record> Records { get; set; }
+        public ICollection<Repair> Repairs {  get; set; }
+        public ICollection<Visit> Visits { get; set; }
+        public Supplier Supplier { get; set; }
+        public FridgeAllocation Allocation { get; set; }
     }
 }
