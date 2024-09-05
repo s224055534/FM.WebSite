@@ -21,6 +21,7 @@ namespace FM.WebSite.Models
         [Required, ForeignKey("Fridge")]
         public int FridgeId {  get; set; }
         public ICollection<Fridge> Fridges { get; set; }
+        public ICollection<PurchaseRequest> Purchases { get; set; }
 
     }
 }

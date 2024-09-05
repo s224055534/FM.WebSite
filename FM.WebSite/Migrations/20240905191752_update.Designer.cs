@@ -4,6 +4,7 @@ using FM.WebSite.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FM.WebSite.Migrations
 {
     [DbContext(typeof(ManagementContext))]
-    partial class ManagementContextModelSnapshot : ModelSnapshot
+    [Migration("20240905191752_update")]
+    partial class update
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -141,17 +144,12 @@ namespace FM.WebSite.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
-                    b.Property<int>("FridgeId")
+                    b.Property<int?>("FridgesFridgeId")
                         .HasColumnType("int");
-
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasMaxLength(25)
-                        .HasColumnType("nvarchar(25)");
 
                     b.HasKey("FaultId");
 
-                    b.HasIndex("FridgeId");
+                    b.HasIndex("FridgesFridgeId");
 
                     b.ToTable("Fault");
                 });
@@ -440,9 +438,7 @@ namespace FM.WebSite.Migrations
                 {
                     b.HasOne("FM.WebSite.Models.Fridge", "Fridges")
                         .WithMany("Faults")
-                        .HasForeignKey("FridgeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("FridgesFridgeId");
 
                     b.Navigation("Fridges");
                 });

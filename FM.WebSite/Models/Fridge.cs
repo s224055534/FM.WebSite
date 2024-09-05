@@ -21,6 +21,7 @@ namespace FM.WebSite.Models
         public ICollection<Record> Records { get; set; }
         public ICollection<Repair> Repairs {  get; set; }
         public ICollection<Visit> Visits { get; set; }
+        public ICollection<PurchaseRequest> Purchases { get; set; }
         public Supplier Supplier { get; set; }
         public FridgeAllocation Allocation { get; set; }
     }
