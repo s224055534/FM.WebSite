@@ -17,6 +17,7 @@ namespace FM.WebSite.Data
         DbSet<Visit> Visit { get; set; }
         DbSet<Fault> Fault { get; set; }
         DbSet<Record> Record { get; set; }
+        //DbSet<FridgeAllocation> FridgeAllocation { get; set; }
 
     }
 }

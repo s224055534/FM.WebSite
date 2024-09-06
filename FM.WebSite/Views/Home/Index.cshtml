@@ -1,9 +1,76 @@
-﻿@{
+﻿@model FM.WebSite.Models.UserLoginViewModel
+
+@{
     ViewData["Title"] = "Home Page";
     Layout = "~/Views/Shared/_LayoutHome.cshtml";
 }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frost Tech</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .center-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
 
+        .welcome-text {
+            text-align: center;
+            max-width: 600px;
+            co
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <div class="container-fluid">
+            <div class="row center-content">
+                <!-- Centered Welcome Message -->
+                <div class="col-md-6 welcome-text">
+                    <h1>Welcome to Frost Tech</h1>
+                    <p>Where we:</p>
+                    <ul style="list-style: none; padding: 0;">
+                        <li>Sell,</li>
+                        <li>Maintain,</li>
+                        <li>& Fix fridges for our customers to ensure refrigeration of their beverages.</li>
+                    </ul>
+                </div>
 
-<div>
-    <h1 class="display-4 align-text-top">Welcome!!</h1>
-</div>
+                <!-- Login Form on the Right -->
+                <div class="col-md-4 offset-md-2">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title text-center">Login</h4>
+                            <form asp-action="Login" method="post">
+                                <div class="form-group">
+                                    <label for="email">Email:</label>
+                                    <input type="email" class="form-control" id="email" name="Email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password:</label>
+                                    <input type="password" class="form-control" id="password" name="Password" required>
+                                </div>
+                                <div class="form-group text-center">
+                                    <a href="#">Forgot password?</a>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block">Login</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+    
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

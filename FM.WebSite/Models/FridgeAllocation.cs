@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using FM.WebSite.Models;
 
 namespace FM.WebSite.Models
 {
