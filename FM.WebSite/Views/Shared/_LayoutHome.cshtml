@@ -41,13 +41,10 @@
             background-repeat: no-repeat; 
             height: 100vh; 
             width: 100vw;
-            display: flex;
-            /* align-items: center; 
-            justify-content: center; */
-            /* color: white;  */
+           
             text-align: center;
-            margin: 0; /* Remove default margin */
-            padding: 0; /* Remove default padding */
+            margin: 0; 
+            padding: 0;
             overflow-x: hidden;
         }
 
@@ -55,6 +52,9 @@
             width: 100%;
             height: 100%;
             overflow-x: hidden; /* Prevent horizontal overflow */
+        }
+        main {
+            padding-left: 0;
         }
 
 
@@ -93,7 +93,7 @@
         </nav>
     </header>
             <!-- Main Content Area -->
-                <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <main role="main" class="col-md-9 ml-sm-auto col-lg-12">
                     @RenderBody()
                 </main>
            
