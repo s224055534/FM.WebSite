@@ -18,24 +18,44 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            flex-wrap: wrap;
         }
 
         .welcome-text {
             text-align: center;
             max-width: 600px;
-            co
         }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: auto;
+        }
+
+        .welcome-text ul {
+            padding-left: 20px; /* Indent the list */
+            list-style-type: disc; /* Ensure bullets are shown */
+            text-align: left; /* Align text to the left within the list */
+        }
+
+            .welcome-text ul li {
+                word-wrap: break-word; /* Ensure long words wrap within the list item */
+                white-space: normal; /* Allow normal line breaks */
+                line-height: 1.5; /* Improve readability */
+                color: white;
+            }
     </style>
 </head>
 <body>
-    <form>
+   
         <div class="container-fluid">
             <div class="row center-content">
                 <!-- Centered Welcome Message -->
                 <div class="col-md-6 welcome-text">
-                    <h1>Welcome to Frost Tech</h1>
-                    <p>Where we:</p>
-                    <ul style="list-style: none; padding: 0;">
+                    <h1 class="text-white">Welcome to Frost Tech</h1>
+                <p class="text-white">Where we:</p>
+                    <ul>
                         <li>Sell,</li>
                         <li>Maintain,</li>
                         <li>& Fix fridges for our customers to ensure refrigeration of their beverages.</li>
@@ -66,7 +86,7 @@
                 </div>
             </div>
         </div>
-    </form>
+   
 </body>
     
 @section Scripts {
