@@ -1,11 +1,13 @@
-﻿using Microsoft.Identity.Client;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.Identity.Client;
 using System.ComponentModel.DataAnnotations;
 namespace FM.WebSite.Models
 {
-    public class User
+    public class User: IdentityUser
     {
         [Key]
-        public int userId { get; set; }
+        public int UserId { get; set; }
         [Required]
         [StringLength(50)]
         public string Name { get; set; }
@@ -14,7 +16,7 @@ namespace FM.WebSite.Models
         public string Surname { get; set; }
         [Required,StringLength(10)]
         public string Gender {  get; set; }
-        [Required, DataType(DataType.Date), Display(Name ="Date Of Birth")]      
+        [Required, DataType(DataType.Date)]      
         public DateTime DOB { get; set; }
         [Required]
         [StringLength(75)]
@@ -22,7 +24,7 @@ namespace FM.WebSite.Models
         [Required]
         [StringLength (40)]
         public string Password { get; set; }
-        [Required, Display(Name ="Phone Number")]
+        [Required]
         [StringLength(12)]
         public string PhoneNumber { get; set; }
         [Required]
@@ -31,7 +33,7 @@ namespace FM.WebSite.Models
         [Required]
         [StringLength(50)]
         public string City { get; set; }
-        [Required, Display(Name="Zip Code")]
+        [Required]
         [StringLength(10)]
         public string ZipCode { get; set; }
         [StringLength(10)]
@@ -43,4 +45,5 @@ namespace FM.WebSite.Models
         
 
     }
+    
 }

@@ -1,11 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace FM.WebSite.Models
+namespace FM.WebSite.Models.Account
 {
     public class UserLoginViewModel
     {
         [Required(ErrorMessage = "Username is required")]
-        [EmailAddress(ErrorMessage = "Invalid Username or P"), Display(Name ="Username")]
+        [EmailAddress(ErrorMessage = "Invalid Username or P"), Display(Name = "Username")]
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Password is required")]

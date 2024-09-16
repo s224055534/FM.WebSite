@@ -6,7 +6,7 @@ namespace FM.WebSite.Models
     public class Employee
     {
         [Key, ForeignKey("User")]
-        public int EmployeeId { get; set; }
+        public int UserId { get; set; }
         [Required, StringLength(10)]
         public string Role {  get; set; }
         public User User { get; set; }

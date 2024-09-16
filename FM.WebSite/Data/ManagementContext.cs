@@ -1,10 +1,11 @@
 ﻿using FM.WebSite.Models;
 using FM.WebSite.Models.Maintenance;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace FM.WebSite.Data
 {
-    public class ManagementContext:DbContext
+    public class ManagementContext: IdentityDbContext<User>
     {
         public ManagementContext(DbContextOptions<ManagementContext> options) : base(options) 
         {          
@@ -17,7 +18,7 @@ namespace FM.WebSite.Data
         DbSet<Visit> Visit { get; set; }
         DbSet<Fault> Fault { get; set; }
         DbSet<Record> Record { get; set; }
-        //DbSet<FridgeAllocation> FridgeAllocation { get; set; }
+        DbSet<FridgeAllocation> FridgeAllocation { get; set; }
 
     }
 }
