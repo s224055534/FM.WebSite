@@ -82,11 +82,20 @@
                 <span asp-validation-for="LastName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label>Gender</label>
-                <label><input asp-for="Gender" type="radio" value="Female" /> Female</label>
-                <label><input asp-for="Gender" type="radio" value="Male" /> Male</label>
-                <span asp-validation-for="Gender" class="text-danger"></span>
+                <label>Gender</label><br/>
+                <div>
+                    @Html.RadioButtonFor(m => m.Gender, "Male", new { id = "Male" })
+                    <label for="Male">Male</label>
+
+                    @Html.RadioButtonFor(m => m.Gender, "Female", new { id = "Female" })
+                    <label for="Female">Female</label>
+
+                    @Html.RadioButtonFor(m => m.Gender, "Other", new { id = "Other" })
+                    <label for="Other">Other</label>
+                </div>
+                @Html.ValidationMessageFor(m => m.Gender, "", new { @class = "text-danger" })
             </div>
+
             <div class="form-group">
                 <label asp-for="DOB"></label>
                 <input asp-for="DOB" class="form-control" type="date" />

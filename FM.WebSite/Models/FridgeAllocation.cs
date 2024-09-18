@@ -18,9 +18,12 @@ namespace FM.WebSite.Models
         // Foreign Key
         [Required, ForeignKey("Fridge")]
         public int FridgeId { get; set; }
+        [Required, ForeignKey("Employee")]
+        public string EmployeeId { get; set; }
         [Required, ForeignKey("Customer")]
         public int CustomerId {  get; set; }
         public Fridge Fridge { get; set; }
         public Customer Customer { get; set; }
+        public ICollection<Employee> Employees { get; set; }
     }
 }

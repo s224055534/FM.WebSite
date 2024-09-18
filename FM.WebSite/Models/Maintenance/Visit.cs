@@ -12,7 +12,7 @@ namespace FM.WebSite.Models.Maintenance
         [Required, DataType(DataType.Time), Display(Name ="Time")]
         public TimeOnly VisitTime { get; set; }
         [Required, ForeignKey("Employee")]
-        public int EmployeeId {  get; set; }
+        public string EmployeeId {  get; set; }
         [Required, ForeignKey("Customer")]
         public int CustomerId { get; set; }
         [Required, ForeignKey("Fridge")]

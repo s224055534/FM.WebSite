@@ -18,7 +18,7 @@ namespace FM.WebSite.Models
         public int FridgeId { get; set; }
         public Fridge Fridge { get; set; }
         [Required, ForeignKey("Employee")]
-        public int EmployeeId { get; set; }
+        public string EmployeeId { get; set; }
         public Employee Employee { get; set; }
 
     }

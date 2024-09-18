@@ -11,7 +11,8 @@ namespace FM.WebSite.Models.Account
         [Required]
         [StringLength(50), Display(Name = "Last Name")]
         public string LastName { get; set; }
-        [Required, StringLength(10)]
+        [Required]
+        [StringLength(10)]
         public string Gender { get; set; }
         [Required, DataType(DataType.Date), Display(Name = "Date Of Birth")]
         public DateTime DOB { get; set; }
